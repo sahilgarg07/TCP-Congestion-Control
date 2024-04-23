@@ -25,8 +25,6 @@ class rdt_Sender(object):
 		# some default parameter values
 		self.data_packet_length=10 # bits
 		self.timeout_value=10 # default timeout value for the sender
-		self.N=5 # Sender's Window size
-		self.K=16 # Packet Sequence numbers can range from 0 to K-1
 		self.cwnd = self.data_packet_length
 		self.ssthresh = 1000
 		self.state=SLOW_START
@@ -51,8 +49,7 @@ class rdt_Sender(object):
 		# This function is called by the 
 		# sending application.
 			
-		# check if the nextseqnum lies within the 
-		# range of sequence numbers in the current window.
+		# check if the nextseqnum lies within the congestion window.
 		# If it does, make a packet and send it,
 		# else, refuse this data.
 
@@ -256,15 +253,6 @@ class rdt_Receiver(object):
 		# when a packet arrives at the receiver
 		if(packt.corrupted==False):
 			
-			# extract and deliver data
-			# self.receiving_app.deliver_data(packt.payload)
-			# print("TIME:",self.env.now,"RDT_RECEIVER: got expected packet",packt.seq_num,". Sent ACK",self.expectedseqnum)
-			
-			# # send an ACK for the newly received packet
-			# self.sndpkt= Packet(seq_num=self.expectedseqnum, payload="ACK",packet_length=self.ack_packet_length) 
-			# self.channel.udt_send(self.sndpkt)
-			# self.total_packets_sent+=1
-			
 			print("TIME: ",self.env.now, "RDT_RECEIVER: got packet", packt.seq_num)
 			if(packt.seq_num >= self.rcvbase and not packt.seq_num in self.rcvpackt.keys()):
 				self.mark_rcv_receiver[packt.seq_num] = True
@@ -285,8 +273,7 @@ class rdt_Receiver(object):
 			if flag:
 				self.num_retransmissions+=1
 			self.total_packets_sent+=1
-			# increment the expectedseqnum modulo K
-			# self.expectedseqnum = (self.expectedseqnum + 1)%self.K 
+		
 			
 			
 		else:
