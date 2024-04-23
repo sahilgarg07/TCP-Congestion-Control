@@ -1,7 +1,4 @@
 # Simulation Testbench
-#
-# Author: Neha Karanjkar
-# Date: 6 April 2020
 
 import simpy
 from Applications import SendingApplication,ReceivingApplication
@@ -24,9 +21,9 @@ channel_for_ack	  = UnreliableChannel(env=env,name="ACK_CHANNEL", Pc=0,Pl=0.02,p
 
 # Set some parameters for the Go-Back-N Protocol
 rdt_sender.N=5	# Window size for the sender
-rdt_receiver.N=5 # Window size for the receiver (Note: This is ignored in the GBN protocol, but required in the SR protocol)
-rdt_sender.K=32 # Packet sequence numbers range from 0 to K-1
-rdt_receiver.K=32 # Packet sequence numbers range from 0 to K-1
+rdt_receiver.N=5 # Window size for the receiver
+rdt_sender.K=32 # Packet sequence numbers 
+rdt_receiver.K=32 # Packet sequence numbers
 rdt_sender.timeout_value=5	# Timeout value for the sender
 rdt_sender.data_packet_length=10 # length of the DATA packet in bits
 rdt_receiver.ack_packet_length=10 # length of the ACK packet in bits
@@ -82,13 +79,4 @@ print("Total number of re-transmitted ACK packets=%d (%0.2f%% of total packets s
 print("Utilization for the DATA channel=%0.2f%%"%(channel_for_data.channel_utilization_time/t*100.0))
 print("Utilization for the  ACK channel=%0.2f%%"%(channel_for_ack.channel_utilization_time/t*100.0))
 
-# CWind.Time = CWind.Time[1000:]
-# # CWind.Cwind = CWind.Cwind[1000:]
-# plt.plot(CWind.Time, CWind.Cwind, 'b')
-# # plt.xlim(1000, max(CWind.Time))
 
-# plt.ylabel("Congestion")
-# plt.xlabel("Time")
-# plt.legend()
-# plt.grid(True)
-# plt.show()
