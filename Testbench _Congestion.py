@@ -20,9 +20,9 @@ channel_for_data  = UnreliableChannel(env=env,name="DATA_CHANNEL",Pc=0,Pl=0.02,p
 channel_for_ack	  = UnreliableChannel(env=env,name="ACK_CHANNEL", Pc=0,Pl=0.02,propagation_delay=2, transmission_rate=1000, bandwidth = 150)
 
 
-# Set some parameters for the Go-Back-N Protocol
+# Set some parameters 
 rdt_sender.N=5	# Window size for the sender
-rdt_receiver.N=5 # Window size for the receiver (Note: This is ignored in the GBN protocol, but required in the SR protocol)
+rdt_receiver.N=5 # Window size for the receiver 
 rdt_sender.K=32 # Packet sequence numbers range from 0 to K-1
 rdt_receiver.K=32 # Packet sequence numbers range from 0 to K-1
 rdt_sender.timeout_value=5	# Timeout value for the sender
