@@ -1,7 +1,5 @@
 # SimPy models for rdt_Sender and rdt_Receiver
-# implementing the Go-Back-N Protocol
 
-# Author: Dr. Neha Karanjkar, IIT Goa
 
 import simpy
 import random
@@ -21,8 +19,7 @@ class rdt_Sender(object):
 		# some default parameter values
 		self.data_packet_length=10 # bits
 		self.timeout_value=10 # default timeout value for the sender
-		self.N=5 # Sender's Window size
-		self.K=16 # Packet Sequence numbers can range from 0 to K-1
+		
 		self.cwnd = self.data_packet_length
 
 		# some state variables and parameters for the Go-Back-N Protocol
@@ -45,8 +42,7 @@ class rdt_Sender(object):
 		# This function is called by the 
 		# sending application.
 			
-		# check if the nextseqnum lies within the 
-		# range of sequence numbers in the current window.
+		# check if the nextseqnum lies within the congestion window.
 		# If it does, make a packet and send it,
 		# else, refuse this data.
 
