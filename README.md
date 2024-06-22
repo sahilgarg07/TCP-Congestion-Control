@@ -33,3 +33,13 @@ These four files contain the simulation model of TCP sender and TCP receiver, ea
 
 ### Testbench_Congestion.py
 This file connects all the components and creates a simulation environment. It also prints the graph of the TCP protocol you want to analyze and displays its performance metrics.
+
+
+##Results 
+
+In this section, I have shown the final performace metrics of each technique. 
+
+##MIMD
+![MIMD_Graph](https://github.com/sahilgarg07/TCP-Congestion-Control/assets/125987326/b0133b5c-81cd-4f54-abde-666458ab2356)
+![MIMD_Performance](https://github.com/sahilgarg07/TCP-Congestion-Control/assets/125987326/096b7464-8b44-4011-ae34-5fd49edbc403)
+
