@@ -39,7 +39,28 @@ This file connects all the components and creates a simulation environment. It a
 
 In this section, I have shown the final performace metrics of each technique. 
 
-## MIMD
+### MIMD
 ![MIMD_Graph](https://github.com/sahilgarg07/TCP-Congestion-Control/assets/125987326/b0133b5c-81cd-4f54-abde-666458ab2356)
+
 ![MIMD_Performance](https://github.com/sahilgarg07/TCP-Congestion-Control/assets/125987326/096b7464-8b44-4011-ae34-5fd49edbc403)
+
+### MIAD
+![MIAD_Graph](https://github.com/sahilgarg07/TCP-Congestion-Control/assets/125987326/1e4b1623-4b54-4bdf-b0e4-0aa0e5361d87)
+
+![MIAD_Performance](https://github.com/sahilgarg07/TCP-Congestion-Control/assets/125987326/e564bfa7-7e8d-4b55-a895-0a5ca16dd164)
+
+### AIAD
+![AIAD_Graph](https://github.com/sahilgarg07/TCP-Congestion-Control/assets/125987326/e5746ee9-26e2-4190-b8b5-006c8d5a7ebc)
+
+![AIAD_Performance](https://github.com/sahilgarg07/TCP-Congestion-Control/assets/125987326/f02bc2c9-b90e-4f5a-b487-7c4c141743ca)
+
+### AIMD
+![AIMD_Performance](https://github.com/sahilgarg07/TCP-Congestion-Control/assets/125987326/c4c046b5-0174-41b0-af40-db6f2cace71c)
+
+![AIMD_Graph](https://github.com/sahilgarg07/TCP-Congestion-Control/assets/125987326/35342b20-3986-460e-8495-59d1c3e607ed)
+
+## Conclusion
+
+Seeing the performance of each technique, we can say that AIMD has the best performance and therefore, TCP used the AIMD technique to combat the congestion in the network
+
 
